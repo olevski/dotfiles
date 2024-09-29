@@ -17,5 +17,5 @@ vim.cmd.colorscheme("catppuccin-mocha")
 vim.opt.tabstop = 4
 -- vim.opt.shiftwidth = 4
 
-require("config.lsp")
+require("config.vim-settings")
 require("config.key-mappings")
