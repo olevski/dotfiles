@@ -35,8 +35,9 @@
     pkgs.go
     pkgs.rustup
     pkgs.lua54Packages.luarocks
-    pkgs.neovim
     pkgs.fd
+    pkgs.kind
+    pkgs.kubectx
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -86,6 +87,9 @@
       enable = true;
       searchDownKey = ["$terminfo[kcud1]"];
       searchUpKey = ["$terminfo[kcuu1]"];
+    };
+    shellAliases = {
+      k = "kubectl";
     };
   };
 
@@ -138,6 +142,27 @@
 
   programs.poetry = {
     enable = true;
+  };
+
+  programs.neovim = {
+    enable = true;
+    withNodeJs = true;
+    withPython3 = true;
+    withRuby = true;
+  };
+
+  programs.k9s = {
+    enable = true;
+    skins = {
+      catppuccin-mocha = ./k9s/catppuccin-mocha.yaml;
+    };
+    settings = {
+      k9s = {
+        ui = {
+          skin = "catppuccin-mocha";
+        };
+      };
+    };
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
