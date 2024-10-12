@@ -89,7 +89,19 @@
       searchUpKey = ["$terminfo[kcuu1]"];
     };
     shellAliases = {
+      # Default aliases in Ubuntu
+      egrep="egrep --color=auto";
+      fgrep="fgrep --color=auto";
+      grep="grep --color=auto";
+      l="ls -CF";
+      la="ls -A";
+      ll="ls -alF";
+      ls="ls --color=auto";
+      # I dont want to type kubectl all the time
       k = "kubectl";
+    };
+    syntaxHighlighting = {
+      enable = true;
     };
   };
 
