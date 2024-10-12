@@ -18,10 +18,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-    pkgs.neovim
     pkgs.fzf
     pkgs.zip
     pkgs.unzip
@@ -33,6 +29,14 @@
     pkgs.htop
     pkgs.lsof
     pkgs.openssh
+    pkgs.gnumake
+    pkgs.ripgrep
+    pkgs.nodejs_22
+    pkgs.go
+    pkgs.rustup
+    pkgs.lua54Packages.luarocks
+    pkgs.neovim
+    pkgs.fd
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -70,13 +74,6 @@
 
   programs.starship = {
     enable = true;
-    # custom settings
-    # settings = {
-    #   add_newline = false;
-    #   aws.disabled = true;
-    #   gcloud.disabled = true;
-    #   line_break.disabled = true;
-    # };
   };
 
   programs.zsh = {
@@ -94,12 +91,62 @@
 
   programs.tmux = {
     enable = true;
+    prefix = "C-a";
+    sensibleOnTop = true;
+    mouse = true;
+    extraConfig = ''
+      # put the status bar on top
+      set-option -g status-position top
+      # window navigation (w/o requiring leader)
+      bind -n S-Left previous-window
+      bind -n S-Right next-window
+      # pane navigation when splitting a single window
+      bind-key h select-pane -L
+      bind-key j select-pane -D
+      bind-key k select-pane -U
+      bind-key l select-pane -R
+    '';
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          # Catpuccin Config 3
+          set -g @catppuccin_window_left_separator ""
+          set -g @catppuccin_window_right_separator " "
+          set -g @catppuccin_window_middle_separator " █"
+          set -g @catppuccin_window_number_position "right"
+          set -g @catppuccin_window_default_fill "number"
+          set -g @catppuccin_window_default_text "#W"
+          set -g @catppuccin_window_current_fill "number"
+          set -g @catppuccin_window_current_text "#W"
+          set -g @catppuccin_status_modules_right "directory session"
+          set -g @catppuccin_status_left_separator  " "
+          set -g @catppuccin_status_right_separator ""
+          set -g @catppuccin_status_fill "icon"
+          set -g @catppuccin_status_connect_separator "no"
+          set -g @catppuccin_directory_text "#{pane_current_path}"
+        '';
+      }
+      { plugin = tmuxPlugins.vim-tmux-navigator; }
+    ];
+  };
+
+  programs.pyenv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.poetry = {
+    enable = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    # ".config/nvim".source = dotfiles/nvim;
+    ".config/nvim/init.lua".source = ./nvim/init.lua;
+    ".config/nvim/lua".source = ./nvim/lua;
+    ".config/starship.toml".source = ./starship/starship.toml;
+    ".config/kitty".source = ./kitty;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
