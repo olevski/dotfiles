@@ -23,6 +23,7 @@ config.window_padding = {
 }
 
 -- Make wezterm start maximized
+-- https://wezfurlong.org/wezterm/config/lua/gui-events/gui-startup.html
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
 	window:gui_window():maximize()

@@ -190,6 +190,7 @@
     ".config/starship.toml".source = ./starship/starship.toml;
     ".config/kitty".source = ./kitty;
     ".config/wezterm".source = ./wezterm;
+    ".config/lazygit".source = ./lazygit;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
