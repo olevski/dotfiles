@@ -38,11 +38,13 @@
     pkgs.fd
     pkgs.kind
     pkgs.kubectx
+    pkgs.devcontainer
+    pkgs.lazydocker
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "VictorMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -99,6 +101,9 @@
       ls="ls --color=auto";
       # I dont want to type kubectl all the time
       k = "kubectl";
+      dcb = "devcontainer build --workspace-folder $(git rev-parse --show-toplevel)";
+      dcu = "devcontainer up --workspace-folder $(git rev-parse --show-toplevel)";
+      dce = "devcontainer exec --workspace-folder $(git rev-parse --show-toplevel)";
     };
     syntaxHighlighting = {
       enable = true;
@@ -184,6 +189,7 @@
     ".config/nvim/lua".source = ./nvim/lua;
     ".config/starship.toml".source = ./starship/starship.toml;
     ".config/kitty".source = ./kitty;
+    ".config/wezterm".source = ./wezterm;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
