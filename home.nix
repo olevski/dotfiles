@@ -40,7 +40,7 @@
     pkgs.kubectx
     pkgs.devcontainer
     pkgs.lazydocker
-    pkgs.lua
+    pkgs.lua5_1
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
