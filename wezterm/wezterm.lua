@@ -6,9 +6,9 @@ local mux = wezterm.mux
 local config = wezterm.config_builder()
 
 config.color_scheme = "Catppuccin Mocha"
-config.colors = { background = "black" }
-config.font = wezterm.font("VictorMono Nerd Font Mono", { weight = "DemiBold" })
-config.line_height = 0.85
+config.colors = { background = "#000000" }
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.line_height = 0.90
 config.font_size = 13.0
 config.default_cursor_style = "BlinkingBar"
 

@@ -40,11 +40,12 @@
     pkgs.kubectx
     pkgs.devcontainer
     pkgs.lazydocker
+    pkgs.lua
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    (pkgs.nerdfonts.override { fonts = [ "VictorMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "VictorMono" "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -131,6 +132,10 @@
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
+          # Enable 265 colors
+          # https://github.com/tmux/tmux/wiki/FAQ#how-do-i-use-a-256-colour-terminal
+          set -g default-terminal "tmux-256color"
+          set -as terminal-overrides ",*:RGB"
           # Catpuccin Config 3
           set -g @catppuccin_window_left_separator ""
           set -g @catppuccin_window_right_separator " "
