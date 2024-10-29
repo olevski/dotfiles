@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 
 config.color_scheme = "Catppuccin Mocha"
 config.colors = { background = "#000000" }
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Bold" })
 config.line_height = 0.90
 config.font_size = 13.0
 config.default_cursor_style = "BlinkingBar"
