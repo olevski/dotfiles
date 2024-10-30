@@ -138,6 +138,7 @@
           set -g default-terminal "tmux-256color"
           set -as terminal-overrides ",*:RGB"
           # Catpuccin Config 3
+          set -g @catppuccin_status_background "#000000"
           set -g @catppuccin_window_left_separator ""
           set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"
@@ -185,6 +186,15 @@
           skin = "catppuccin-mocha";
         };
       };
+    };
+  };
+
+  programs.zellij = {
+    enable = true;
+    settings = {
+      theme = "catppuccin-mocha";
+      default_layout = "compact";
+      pane_frames = false;
     };
   };
 
