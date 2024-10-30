@@ -13,9 +13,8 @@ vim.api.nvim_set_keymap("n", "<leader>f", ":NvimTreeToggle<cr>", { silent = true
 
 vim.cmd.colorscheme("catppuccin-mocha")
 
--- Vim sleuth should take care of shift width
+-- Indent detection should take care of the other settings
 vim.opt.tabstop = 4
--- vim.opt.shiftwidth = 4
 
 require("config.vim-settings")
 require("config.key-mappings")
