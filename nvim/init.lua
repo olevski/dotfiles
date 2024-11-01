@@ -13,8 +13,10 @@ vim.api.nvim_set_keymap("n", "<leader>f", ":NvimTreeToggle<cr>", { silent = true
 
 vim.cmd.colorscheme("catppuccin-mocha")
 
--- Indent detection should take care of the other settings
+-- A tab is 4 spaces wide
 vim.opt.tabstop = 4
+-- Shiftwidth is how much to indent stuff by, when zero it uses tabstop
+vim.opt.shiftwidth = 0
 
 require("config.vim-settings")
 require("config.key-mappings")

@@ -3,7 +3,7 @@
 vim.opt.showmode = false
 -- Share the clipboard between system and neovim
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 -- Enable break indent
 vim.opt.breakindent = true
@@ -13,7 +13,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 -- Decrease update time
 vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
@@ -25,10 +25,10 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
