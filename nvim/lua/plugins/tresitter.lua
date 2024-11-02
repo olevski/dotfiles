@@ -18,6 +18,7 @@ return {
 				"python",
 				"go",
 				"rust",
+				"nix",
 			},
 			sync_install = false,
 			highlight = { enable = true },

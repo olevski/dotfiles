@@ -59,6 +59,8 @@ local servers = {
 	-- html
 	html = { filetypes = { "html", "twig", "hbs" } },
 	cssls = {},
+	-- nix
+	nil_ls = {},
 }
 
 return {

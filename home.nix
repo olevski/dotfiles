@@ -15,6 +15,22 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  # Example of how you can add an overlay
+  # NOTE: This is not needed because the same effect can be achieved by what I did below
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     git-spice = prev.git-spice.overrideAttrs (oldAttrs: {
+  #       postInstall = lib.optionalString (pkgs.stdenv.buildPlatform.canExecute pkgs.stdenv.hostPlatform) ''
+  #         mv $out/bin/gs $out/bin/git-spice
+  #         installShellCompletion --cmd git-spice \
+  #           --bash <($out/bin/git-spice shell completion bash) \
+  #           --zsh <($out/bin/git-spice shell completion zsh) \
+  #           --fish <($out/bin/git-spice shell completion fish)
+  #       '';
+  #     });
+  #   })
+  # ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -44,6 +60,12 @@
     pkgs.tree-sitter
     pkgs.pipx
     pkgs.kubernetes-helm
+    pkgs.eza
+
+    # gs is an existing executable for ghost-script, I want the executable to be called git-spice
+    (pkgs.git-spice.overrideAttrs (oldAttrs: {
+      postInstall = oldAttrs.postInstall + "\nmv $out/bin/gs $out/bin/git-spice";
+    }))
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -108,6 +130,7 @@
       dcb = "devcontainer build --workspace-folder $(git rev-parse --show-toplevel)";
       dcu = "devcontainer up --workspace-folder $(git rev-parse --show-toplevel)";
       dce = "devcontainer exec --workspace-folder $(git rev-parse --show-toplevel)";
+      gspc = "git-spice";
     };
     syntaxHighlighting = {
       enable = true;
