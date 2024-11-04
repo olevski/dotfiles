@@ -61,7 +61,6 @@
     pkgs.pipx
     pkgs.kubernetes-helm
     pkgs.eza
-    pkgs.poetry
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -191,10 +190,10 @@
     enableZshIntegration = true;
   };
 
-  # programs.poetry = {
-  #   enable = true;
-  #   package = pkgs.poetry.withPlugins (ps: with ps; [ poetry-polylith-plugin ]);
-  # };
+  programs.poetry = {
+    enable = true;
+    # package =  pkgs.poetry.withPlugins(ps: with ps; [ (pkgs.callPackage ./poetry-plugins/poetry-polylith-plugin.nix { }) ]);
+  };
 
   programs.neovim = {
     enable = true;
