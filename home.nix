@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -61,6 +61,7 @@
     pkgs.pipx
     pkgs.kubernetes-helm
     pkgs.eza
+    pkgs.poetry
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -72,6 +73,7 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     (pkgs.nerdfonts.override { fonts = [ "VictorMono" "JetBrainsMono" ]; })
 
+    # inputs.self.packages.x86_64-linux.poetry-polylith-plugin
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -189,9 +191,10 @@
     enableZshIntegration = true;
   };
 
-  programs.poetry = {
-    enable = true;
-  };
+  # programs.poetry = {
+  #   enable = true;
+  #   package = pkgs.poetry.withPlugins (ps: with ps; [ poetry-polylith-plugin ]);
+  # };
 
   programs.neovim = {
     enable = true;

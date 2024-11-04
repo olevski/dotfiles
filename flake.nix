@@ -10,10 +10,17 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      systems = [
+        "x86_64-linux"
+        "x86_64-darwin"
+      ];
+      # This is a function that generates an attribute by calling a function you
+      # pass to it, with each system as an argument
+      forAllSystems = nixpkgs.lib.genAttrs systems;
     in {
       homeConfigurations."tolevski" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -24,6 +31,10 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit inputs;
+        };
       };
+      packages = forAllSystems (system: import ./custom-nix-pkgs nixpkgs.legacyPackages.${system});
     };
 }
