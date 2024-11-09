@@ -14,6 +14,7 @@ config.default_cursor_style = "BlinkingBar"
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
+config.use_fancy_tab_bar = false
 
 config.window_padding = {
 	left = "1.0cell",

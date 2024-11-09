@@ -50,7 +50,7 @@ local servers = {
 			},
 		},
 	},
-	ruff_lsp = { filetypes = { "python" } },
+	ruff = { filetypes = { "python" } },
 	-- go
 	gopls = {},
 	templ = { filetypes = { "templ" } },
