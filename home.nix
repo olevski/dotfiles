@@ -72,7 +72,6 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     (pkgs.nerdfonts.override { fonts = [ "VictorMono" "JetBrainsMono" ]; })
 
-    # inputs.self.packages.x86_64-linux.poetry-polylith-plugin
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -188,11 +187,6 @@
   programs.pyenv = {
     enable = true;
     enableZshIntegration = true;
-  };
-
-  programs.poetry = {
-    enable = true;
-    # package =  pkgs.poetry.withPlugins(ps: with ps; [ (pkgs.callPackage ./poetry-plugins/poetry-polylith-plugin.nix { }) ]);
   };
 
   programs.neovim = {
