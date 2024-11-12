@@ -27,3 +27,4 @@ Also install a python3 version via pyenv and make it default for the system. Oth
 ```
 sudo apt install libz-dev libreadline-dev libncurses-dev libsqlite3-dev libssl-dev liblzma-dev libgdbm-dev libbz2-dev libffi-dev
 ```
+Once python is installed run `python global 3.12` or whatever version should be global default.

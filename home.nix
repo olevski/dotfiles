@@ -15,6 +15,11 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  # NixGL
+  nixGL.packages = pkgs.nixgl;
+  nixGL.defaultWrapper = "mesa";
+  nixGL.installScripts = [ "mesa" ];
+
   # Example of how you can add an overlay
   # NOTE: This is not needed because the same effect can be achieved by what I did below
   # nixpkgs.overlays = [
@@ -61,6 +66,11 @@
     pkgs.pipx
     pkgs.kubernetes-helm
     pkgs.eza
+    pkgs.wl-clipboard
+    pkgs.rclone
+    pkgs.hyprlock
+    pkgs.waybar
+    (config.lib.nixGL.wrap pkgs.kitty)
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
