@@ -68,9 +68,9 @@
     pkgs.eza
     pkgs.wl-clipboard
     pkgs.rclone
-    pkgs.hyprlock
-    pkgs.waybar
     (config.lib.nixGL.wrap pkgs.kitty)
+    # Wezterm does not work at all when installed like this
+    # (config.lib.nixGL.wrap pkgs.wezterm)
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -191,6 +191,16 @@
         '';
       }
       { plugin = tmuxPlugins.vim-tmux-navigator; }
+      { plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      { plugin = tmuxPlugins.continuum; 
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+        '';
+      }
     ];
   };
 
@@ -230,6 +240,22 @@
   };
 
   fonts.fontconfig.enable = true;
+
+  # Could not get this to show up in app menu when pressing super in ubuntu
+  # xdg.desktopEntries = {
+  #   wezterm = {
+  #     name="WezTerm";
+  #     comment="Wez's Terminal Emulator";
+  #     # keywords=["shell" "prompt" "command" "commandline" "cmd"];
+  #     icon=./icons/wezterm.png;
+  #     # startupWMClass="org.wezfurlong.wezterm";
+  #     # tryExec="wezterm";
+  #     exec="wezterm start --cwd .";
+  #     type="Application";
+  #     categories=["System" "TerminalEmulator" "Utility"];
+  #     terminal=false;
+  #   };
+  # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
