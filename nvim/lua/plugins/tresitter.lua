@@ -19,6 +19,8 @@ return {
 				"go",
 				"rust",
 				"nix",
+				"hcl",
+				"terraform",
 			},
 			sync_install = false,
 			highlight = { enable = true },

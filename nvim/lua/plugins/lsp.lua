@@ -61,6 +61,8 @@ local servers = {
 	cssls = {},
 	-- nix
 	nil_ls = {},
+	-- terraform
+	terraformls = {},
 }
 
 return {
