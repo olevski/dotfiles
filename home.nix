@@ -20,6 +20,13 @@
   nixGL.defaultWrapper = "mesa";
   nixGL.installScripts = [ "mesa" ];
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
   # Example of how you can add an overlay
   # NOTE: This is not needed because the same effect can be achieved by what I did below
   # nixpkgs.overlays = [
@@ -49,7 +56,8 @@
     pkgs.nix-output-monitor
     pkgs.htop
     pkgs.lsof
-    pkgs.openssh
+    # SSH is weird
+    # pkgs.openssh
     pkgs.gnumake
     pkgs.ripgrep
     pkgs.nodejs_22
@@ -71,6 +79,18 @@
     (config.lib.nixGL.wrap pkgs.kitty)
     # Wezterm does not work at all when installed like this
     # (config.lib.nixGL.wrap pkgs.wezterm)
+    pkgs.micromamba
+    pkgs.hadolint
+    pkgs.fluxcd
+    pkgs.awscli2
+    pkgs.rye
+    pkgs.jujutsu
+    pkgs.lazyjj
+    pkgs.terraform
+    pkgs.difftastic
+    pkgs.openstackclient
+    pkgs.skopeo
+    pkgs.uv
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
