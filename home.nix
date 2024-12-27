@@ -91,6 +91,8 @@
     pkgs.openstackclient
     pkgs.skopeo
     pkgs.uv
+    # zig does not properly work like this
+    # pkgs.zig
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -322,6 +324,7 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$HOME/zig"
   ];
 
   # Let Home Manager install and manage itself.
