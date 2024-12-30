@@ -21,6 +21,7 @@ return {
 				"nix",
 				"hcl",
 				"terraform",
+				"zig",
 			},
 			sync_install = false,
 			highlight = { enable = true },

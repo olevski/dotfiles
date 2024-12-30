@@ -63,6 +63,8 @@ local servers = {
 	nil_ls = {},
 	-- terraform
 	terraformls = {},
+	-- zig
+	zls = {},
 }
 
 return {
