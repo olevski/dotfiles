@@ -77,6 +77,7 @@ local servers = {
 			end,
 		},
 	},
+	["typescript-language-server"] = {},
 }
 
 return {
