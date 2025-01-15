@@ -65,6 +65,18 @@ local servers = {
 	terraformls = {},
 	-- zig
 	zls = {},
+	-- javascript / typescript
+	["eslint-lsp"] = {
+		settings = {
+			packageManager = "npm",
+			on_attach = function(client, bufnr)
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					buffer = bufnr,
+					command = "EslintFixAll",
+				})
+			end,
+		},
+	},
 }
 
 return {
