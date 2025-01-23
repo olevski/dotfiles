@@ -93,6 +93,7 @@
     pkgs.uv
     # zig does not properly work like this
     # pkgs.zig
+    pkgs.krew
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -327,6 +328,7 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/zig"
+    "$HOME/.krew/bin"
   ];
 
   # Let Home Manager install and manage itself.
