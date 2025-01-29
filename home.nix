@@ -15,11 +15,6 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # NixGL
-  nixGL.packages = pkgs.nixgl;
-  nixGL.defaultWrapper = "mesa";
-  nixGL.installScripts = [ "mesa" ];
-
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -76,9 +71,6 @@
     pkgs.eza
     pkgs.wl-clipboard
     pkgs.rclone
-    (config.lib.nixGL.wrap pkgs.kitty)
-    # Wezterm does not work at all when installed like this
-    # (config.lib.nixGL.wrap pkgs.wezterm)
     pkgs.micromamba
     pkgs.hadolint
     pkgs.fluxcd
