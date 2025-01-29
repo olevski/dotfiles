@@ -12,6 +12,11 @@ Mostly based on:
 ```
 nix run home-manager/master --flake ./ switch
 ```
+## Updating stuff installed by home manager
+
+```
+nix flake update --flake ./
+```
 
 After the above command is run once you can then use:
 

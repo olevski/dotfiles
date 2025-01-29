@@ -85,7 +85,8 @@
     pkgs.awscli2
     pkgs.rye
     pkgs.jujutsu
-    pkgs.lazyjj
+    ## lazyjj fails to build after update
+    ## pkgs.lazyjj
     pkgs.terraform
     pkgs.difftastic
     pkgs.openstackclient
@@ -94,17 +95,19 @@
     # zig does not properly work like this
     # pkgs.zig
     pkgs.krew
+    pkgs.mkcert
+    pkgs.telepresence2
+    pkgs.operator-sdk
+    pkgs.typescript-language-server
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
       postInstall = oldAttrs.postInstall + "\nmv $out/bin/gs $out/bin/git-spice";
     }))
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    (pkgs.nerdfonts.override { fonts = [ "VictorMono" "JetBrainsMono" ]; })
-    pkgs.typescript-language-server
+    ## Fonts 
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.victor-mono
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
