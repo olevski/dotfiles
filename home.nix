@@ -168,6 +168,7 @@
       dcu = "devcontainer up --workspace-folder $(git rev-parse --show-toplevel)";
       dce = "devcontainer exec --workspace-folder $(git rev-parse --show-toplevel)";
       gspc = "git-spice";
+      tlp = "telepresence";
     };
     syntaxHighlighting = {
       enable = true;
