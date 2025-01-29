@@ -18,6 +18,13 @@ nix run home-manager/master --flake ./ switch
 nix flake update --flake ./
 ```
 
+## When installing or reinstalling fonts 
+
+Remember to run the command below which will rebuild the font cache.
+```
+fc-cache -f -v
+```
+
 After the above command is run once you can then use:
 
 ```
