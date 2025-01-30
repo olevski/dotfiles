@@ -66,18 +66,23 @@ local servers = {
 	-- zig
 	zls = {},
 	-- javascript / typescript
-	["eslint-lsp"] = {
+	eslint = {
+		on_attach = function(client, bufnr)
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				command = "EslintFixAll",
+			})
+		end,
 		settings = {
 			packageManager = "npm",
-			on_attach = function(client, bufnr)
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					command = "EslintFixAll",
-				})
-			end,
 		},
 	},
-	["typescript-language-server"] = {},
+	ts_ls = {
+		on_attach = function(client, bufnr)
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+		end,
+	},
 }
 
 return {
