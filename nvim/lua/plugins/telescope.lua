@@ -32,6 +32,9 @@ return {
 			--   },
 			-- },
 			-- pickers = {}
+			defaults = {
+				layout_strategy = "vertical",
+			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
