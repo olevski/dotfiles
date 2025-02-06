@@ -91,6 +91,7 @@
     pkgs.telepresence2
     pkgs.operator-sdk
     pkgs.typescript-language-server
+    pkgs.sops
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -192,6 +193,8 @@
           # https://github.com/tmux/tmux/wiki/FAQ#how-do-i-use-a-256-colour-terminal
           set -g default-terminal "tmux-256color"
           set -as terminal-overrides ",*:RGB"
+          # Send focus events to programs running inside tmux
+          set -g focus-events on
           # Catpuccin Config 3
           set -g @catppuccin_status_background "#000000"
           set -g @catppuccin_window_left_separator ""
