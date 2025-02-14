@@ -26,7 +26,7 @@ selection-foreground = cdd6f4
 font-family = ""
 font-family = "JetBrainsMono Nerd Font Mono"
 adjust-cell-height = -15%
-font-size = 14
+font-size = 13.5
 font-style = "Bold"
 font-style-italic = "Bold Italic"
 adjust-cursor-height = -15%
@@ -37,3 +37,6 @@ window-save-state = always
 fullscreen = false
 gtk-wide-tabs = false
 gtk-titlebar = false
+
+window-padding-balance = true
+window-padding-x = 10
