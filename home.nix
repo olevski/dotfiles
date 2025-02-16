@@ -92,6 +92,7 @@
     pkgs.operator-sdk
     pkgs.typescript-language-server
     pkgs.sops
+    pkgs.pack
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
