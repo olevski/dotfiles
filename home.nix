@@ -96,6 +96,9 @@
     pkgs.typst
     pkgs.k6
     pkgs.marp-cli
+    pkgs.opentofu
+    pkgs.terraform-ls
+    pkgs.packer
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
