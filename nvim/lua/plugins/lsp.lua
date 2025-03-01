@@ -62,7 +62,7 @@ local servers = {
 	-- nix
 	nil_ls = {},
 	-- terraform
-	terraformls = {},
+	terraformls = { filetypes = { "terraform", "terraform-vars", "hcl" } },
 	-- zig
 	zls = {},
 	-- javascript / typescript
