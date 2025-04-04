@@ -77,8 +77,7 @@
     pkgs.awscli2
     pkgs.rye
     pkgs.jujutsu
-    ## lazyjj fails to build after update
-    ## pkgs.lazyjj
+    pkgs.lazyjj
     pkgs.terraform
     pkgs.difftastic
     pkgs.openstackclient
