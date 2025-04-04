@@ -134,6 +134,17 @@
       rerere = {
         enabled = true;
       };
+      merge = {
+        tool = "meld";
+        algorithm = "histogram";
+      };
+      "mergetool \"meld\"" = {
+        cmd = "meld \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output \"$MERGED\"";
+      };
+      mergetool = {
+        prompt=false;
+        keepBackup = false;
+      };
     };
   };
 
