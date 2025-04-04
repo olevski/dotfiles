@@ -89,7 +89,8 @@
     pkgs.krew
     pkgs.mkcert
     pkgs.telepresence2
-    pkgs.operator-sdk
+    # Operator sdk clashes with other versions installed locally per project
+    # pkgs.operator-sdk
     pkgs.typescript-language-server
     pkgs.sops
     pkgs.pack
