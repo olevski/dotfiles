@@ -42,6 +42,32 @@ vim.keymap.set("n", "C-l", ":TmuxNavigateRight<CR>")
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- From https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/remap.lua
+-- See https://www.youtube.com/watch?v=w7i4amO_zaE
+vim.keymap.set("n", "J", "mzJ`z")
+-- moving up and down is less jarring
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- Search terms stay in the middle
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+-- In select mode the selected code can be moved up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- greatest remap ever
+-- when pasting over a selection do not lose the thing that was copied in clipboard
+vim.keymap.set("x", "<leader>p", [["_dP]])
+-- when deleting do not put the deleted thing in clipboard
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
+-- quickfix stuff
+-- the maps clash with some of the tmux navigation shortcuts
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- replace current word with something else
+vim.keymap.set("n", "<leader>sb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left>]])
+
 -- LSP keymaps
 -- From nvim kickstart
 vim.api.nvim_create_autocmd("LspAttach", {
