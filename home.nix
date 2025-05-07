@@ -102,6 +102,10 @@
     # (pkgs.vagrant.overrideAttrs (oldAttrs: {
     #   withLibvirt = false;
     # }))
+    pkgs.snyk
+    pkgs.shellcheck
+    pkgs.goreleaser
+    pkgs.dive
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
