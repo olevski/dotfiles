@@ -73,7 +73,7 @@
     pkgs.rclone
     pkgs.micromamba
     pkgs.hadolint
-    pkgs.fluxcd
+    # pkgs.fluxcd
     pkgs.awscli2
     pkgs.rye
     pkgs.jujutsu
@@ -106,6 +106,7 @@
     pkgs.shellcheck
     pkgs.goreleaser
     pkgs.dive
+    pkgs.golangci-lint
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -124,6 +125,7 @@
     # '')
 
     pkgs.meld
+    pkgs.azure-cli
   ];
 
   programs.git = {
@@ -359,6 +361,7 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    SSH_AUTH_SOCK = "~/.1password/agent.sock";
   };
 
   home.sessionPath = [
