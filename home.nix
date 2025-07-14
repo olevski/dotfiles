@@ -107,6 +107,7 @@
     pkgs.goreleaser
     pkgs.dive
     pkgs.golangci-lint
+    pkgs.devenv
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
