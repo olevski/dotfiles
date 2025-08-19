@@ -109,6 +109,7 @@
     pkgs.golangci-lint
     pkgs.devenv
     pkgs.spicedb
+    pkgs.gh
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -164,6 +165,12 @@
 
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
+    settings = {
+      kubernetes = {
+        disabled = false;
+      };
+    };
   };
 
   programs.zsh = {
@@ -327,7 +334,6 @@
     ".config/nvim/init.lua".source = ./nvim/init.lua;
     ".config/nvim/lua".source = ./nvim/lua;
     ".config/nvim/after".source = ./nvim/after;
-    ".config/starship.toml".source = ./starship/starship.toml;
     ".config/kitty".source = ./kitty;
     ".config/wezterm".source = ./wezterm;
     ".config/lazygit".source = ./lazygit;
