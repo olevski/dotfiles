@@ -83,8 +83,6 @@
     pkgs.openstackclient
     pkgs.skopeo
     pkgs.uv
-    # zig does not properly work like this
-    # pkgs.zig
     pkgs.krew
     pkgs.mkcert
     pkgs.telepresence2
@@ -110,6 +108,7 @@
     pkgs.devenv
     pkgs.spicedb
     pkgs.gh
+    pkgs.zvm
 
     # gs is an existing executable for ghost-script, I want the executable to be called git-spice
     (pkgs.git-spice.overrideAttrs (oldAttrs: {
@@ -169,6 +168,18 @@
     settings = {
       kubernetes = {
         disabled = false;
+        contexts = [
+          {
+            context_pattern="aks-.*-renku-prod";
+            style="bold red";
+            symbol="💔 ";
+          }
+          {
+            context_pattern="aks-.*-renku-dev";
+            style="blue";
+            symbol="🛠️ ";
+          }
+        ];
       };
     };
   };
@@ -374,7 +385,7 @@
 
   home.sessionPath = [
     "$HOME/.local/bin"
-    "$HOME/zig"
+    "$HOME/.zvm/bin"
     "$HOME/.krew/bin"
   ];
 
