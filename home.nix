@@ -344,7 +344,7 @@
   home.file = {
     ".config/nvim/init.lua".source = ./nvim/init.lua;
     ".config/nvim/lua".source = ./nvim/lua;
-    ".config/nvim/after".source = ./nvim/after;
+    # ".config/nvim/after".source = ./nvim/after;
     ".config/kitty".source = ./kitty;
     ".config/wezterm".source = ./wezterm;
     ".config/lazygit".source = ./lazygit;
