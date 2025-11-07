@@ -7,6 +7,11 @@ source ~/.local/share/omarchy/default/bash/rc
 
 # Add your own exports, aliases, and functions here.
 alias k='kubectl'
+alias dcb='devcontainer build --workspace-folder $(git rev-parse --show-toplevel)'
+alias dcu='devcontainer up --workspace-folder $(git rev-parse --show-toplevel)'
+alias dce='devcontainer exec --workspace-folder $(git rev-parse --show-toplevel)'
+alias gspc='git-spice'
+alias tlp='telepresence'
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -16,3 +21,4 @@ eval "$(pyenv init - bash)"
 
 # Created by `pipx` on 2025-11-06 19:53:48
 export PATH="$PATH:/home/tolevski/.local/bin"
+
