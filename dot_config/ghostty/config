@@ -10,7 +10,7 @@ font-size = 13.5
 # font-style-italic = "Bold Italic"
 adjust-cursor-height = -10%
 
-shell-integration = zsh
+shell-integration = bash
 shell-integration-features = true
 window-save-state = always
 fullscreen = false
