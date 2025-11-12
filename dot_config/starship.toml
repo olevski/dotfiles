@@ -1,0 +1,12 @@
+[kubernetes]
+disabled = false
+
+[[kubernetes.contexts]]
+context_pattern = "aks-.*-renku-prod"
+style = "bold red"
+symbol = "💔 "
+
+[[kubernetes.contexts]]
+context_pattern = "aks-.*-renku-dev"
+style = "blue"
+symbol = "🛠️ "
