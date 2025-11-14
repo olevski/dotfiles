@@ -1,4 +1,3 @@
-# From https://github.com/catppuccin/k9s/blob/main/dist/catppuccin-mocha.yaml
 k9s:
   body:
     fgColor: '#cdd6f4'
