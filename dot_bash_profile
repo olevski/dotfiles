@@ -10,3 +10,5 @@ eval "$(pyenv init - bash)"
 
 # Created by `pipx` on 2025-11-06 19:53:48
 export PATH="$PATH:/home/tolevski/.local/bin"
+
+[[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
