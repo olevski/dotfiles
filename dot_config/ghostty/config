@@ -10,11 +10,14 @@ adjust-cursor-height = -10%
 shell-integration = bash
 shell-integration-features = true
 window-save-state = always
+maximize = true
 fullscreen = false
 gtk-wide-tabs = false
 gtk-titlebar = false
+gtk-titlebar-hide-when-maximized = true
 
 window-padding-balance = true
 window-padding-x = 10
+window-decoration = none
 
 theme = Catppuccin Mocha
