@@ -39,6 +39,9 @@ eval "$(pyenv init - bash)"
 # Created by `pipx` on 2025-11-06 19:53:48
 export PATH="$PATH:/home/tolevski/.local/bin"
 
+# rust
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/rustup/bin"
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 
