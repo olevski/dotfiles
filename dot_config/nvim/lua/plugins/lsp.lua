@@ -56,7 +56,7 @@ return {
       html = { filetypes = { "html", "twig", "hbs" } },
       cssls = {},
       -- nix
-      nil_ls = {},
+      -- nil_ls = {},
       -- terraform
       terraformls = { filetypes = { "terraform", "terraform-vars", "hcl" } },
       -- zig
