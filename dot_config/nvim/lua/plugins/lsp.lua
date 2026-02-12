@@ -50,7 +50,8 @@ return {
       gopls = {},
       templ = { filetypes = { "templ" } },
       -- rust
-      rust_analyzer = {},
+      -- Comes from lazyvim extra with better settings
+      -- rust_analyzer = {},
       -- html
       html = { filetypes = { "html", "twig", "hbs" } },
       cssls = {},
