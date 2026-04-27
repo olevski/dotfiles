@@ -23,6 +23,7 @@ return {
       "typescript",
       "css",
       "latex",
+      "just",
     },
   },
 }

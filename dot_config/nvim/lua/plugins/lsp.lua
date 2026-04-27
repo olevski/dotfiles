@@ -79,6 +79,7 @@ return {
           client.server_capabilities.documentRangeFormattingProvider = false
         end,
       },
+      just = {},
     },
   },
 }
