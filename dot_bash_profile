@@ -12,3 +12,7 @@ eval "$(pyenv init - bash)"
 export PATH="$PATH:/home/tolevski/.local/bin"
 
 [[ -r "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
