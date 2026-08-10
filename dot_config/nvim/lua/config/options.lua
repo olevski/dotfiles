@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 -- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+vim.o.exrc = true
