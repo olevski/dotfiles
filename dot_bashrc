@@ -29,6 +29,7 @@ alias dcu='devcontainer up --workspace-folder $(git rev-parse --show-toplevel)'
 alias dce='devcontainer exec --workspace-folder $(git rev-parse --show-toplevel)'
 alias gspc='git-spice'
 alias tlp='telepresence'
+alias cld='nono run --profile claude-local -- claude --settings ~/.claude/nono-settings.json'
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
