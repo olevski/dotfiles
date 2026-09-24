@@ -52,6 +52,8 @@ export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/rustup/bin"
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+source <(COMPLETE=zsh rnk)
+
 # Setup starship
 # Prompt (keep at the end)
 eval "$(starship init zsh)"
