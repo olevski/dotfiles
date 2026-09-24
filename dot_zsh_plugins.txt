@@ -1,0 +1,11 @@
+# Handles compinit for you (runs it once, at the right time)
+mattmc3/ez-compinit
+
+# Extra completion definitions
+zsh-users/zsh-completions kind:fpath path:src
+
+# Fish-style suggestions from history
+zsh-users/zsh-autosuggestions
+
+# Keep this last
+zsh-users/zsh-syntax-highlighting

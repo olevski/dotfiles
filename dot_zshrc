@@ -1,0 +1,57 @@
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt share_history hist_ignore_all_dups hist_reduce_blanks
+
+# Navigation
+setopt auto_cd auto_pushd pushd_ignore_dups
+
+# Completion styling
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+bindkey -e
+
+# Antidote: pick the line matching how you installed it
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh                         # git clone
+# source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh  # Homebrew
+antidote load
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Add your own exports, aliases, and functions here.
+alias k='kubectl'
+alias dcb='devcontainer build --workspace-folder $(git rev-parse --show-toplevel)'
+alias dcu='devcontainer up --workspace-folder $(git rev-parse --show-toplevel)'
+alias dce='devcontainer exec --workspace-folder $(git rev-parse --show-toplevel)'
+alias gspc='git-spice'
+alias tlp='telepresence'
+alias cld='nono run --profile claude-local -- claude --settings ~/.claude/nono-settings.json'
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# Created by `pipx` on 2025-11-06 19:53:48
+export PATH="$PATH:/home/tolevski/.local/bin"
+
+# rust
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/rustup/bin"
+
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# Setup starship
+# Prompt (keep at the end)
+eval "$(starship init zsh)"
