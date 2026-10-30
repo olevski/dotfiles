@@ -1,0 +1,39 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+
+[ui]
+# Start with the workspaces sidebar collapsed (toggle with prefix+b)
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
+
+# Tab bar at the top, like the tmux status line
+tab_bar_position = "top"
+
+# Active workspace name at the right edge of the tab bar, like the tmux session name
+tab_bar_right = [
+  { type = "command", command = '"$HERDR_BIN_PATH" workspace get "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r .result.workspace.label', interval_seconds = 1, timeout_seconds = 1 },
+]
+
+mouse_capture = true
+
+# A name typed at the new-tab prompt counts as manual, so herdr-auto-title would never rename the tab
+prompt_new_tab_name = false
+
+[keys]
+prefix = "ctrl+a"
+
+# Tab navigation (w/o requiring leader)
+previous_tab = ["shift+left", "prefix+p"]
+next_tab = ["shift+right", "prefix+n"]
+new_tab = "prefix+c"
+switch_tab = "prefix+1..9"
+
+# Pane navigation
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+toggle_sidebar = "prefix+b"
