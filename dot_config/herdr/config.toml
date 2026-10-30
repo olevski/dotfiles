@@ -37,3 +37,9 @@ focus_pane_up = "prefix+k"
 focus_pane_right = "prefix+l"
 
 toggle_sidebar = "prefix+b"
+
+# Navigator on prefix+s like tmux's session chooser, settings moved to prefix+,
+goto = "prefix+s"
+settings = "prefix+comma"
+
+detach = "prefix+d"
