@@ -43,3 +43,6 @@ goto = "prefix+s"
 settings = "prefix+comma"
 
 detach = "prefix+d"
+
+[experimental]
+pane_history = true
