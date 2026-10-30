@@ -49,6 +49,9 @@ export PATH="$PATH:/home/tolevski/.local/bin"
 # rust
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/rustup/bin"
 
+# docker sbx
+-export PATH="/home/tolevski/.docker/sbx/bin:$PATH"
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 
