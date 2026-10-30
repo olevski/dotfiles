@@ -13,7 +13,7 @@ tab_bar_position = "top"
 
 # Active workspace name at the right edge of the tab bar, like the tmux session name
 tab_bar_right = [
-  { type = "command", command = '"$HERDR_BIN_PATH" workspace get "$HERDR_ACTIVE_WORKSPACE_ID" | jq -r .result.workspace.label', interval_seconds = 1, timeout_seconds = 1 },
+  { type = "command", command = "~/.config/herdr/workspace-status.sh", interval_seconds = 1, timeout_seconds = 1 },
 ]
 
 mouse_capture = true
