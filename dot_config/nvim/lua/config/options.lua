@@ -4,3 +4,4 @@
 
 -- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 vim.o.exrc = true
+vim.g.maplocalleader = "-"
