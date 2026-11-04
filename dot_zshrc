@@ -50,12 +50,15 @@ export PATH="$PATH:/home/tolevski/.local/bin"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/opt/rustup/bin"
 
 # docker sbx
--export PATH="/home/tolevski/.docker/sbx/bin:$PATH"
+export PATH="/home/tolevski/.docker/sbx/bin:$PATH"
 
 export EDITOR='nvim'
 export VISUAL='nvim'
 
 source <(COMPLETE=zsh rnk)
+
+# Setup atuin
+eval "$(atuin init zsh)"
 
 # Setup starship
 # Prompt (keep at the end)
