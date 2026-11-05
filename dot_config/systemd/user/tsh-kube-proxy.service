@@ -1,0 +1,14 @@
+[Unit]
+Description=Teleport kube proxy (all clusters)
+
+[Service]
+Environment=KUBECONFIG=%h/.kube/teleport-all
+Environment=TELEPORT_KUBECONFIG=%h/.kube/teleport-proxy
+ExecStartPre=/usr/local/bin/tsh kube login --all
+ExecStart=/usr/local/bin/tsh proxy kube --port 8443
+Restart=always
+RestartSec=30
+TimeoutStartSec=60
+
+[Install]
+WantedBy=default.target
