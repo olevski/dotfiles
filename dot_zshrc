@@ -56,6 +56,20 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 export TELEPORT_KUBECONFIG="$HOME/.kube/teleport-proxy"
+_teleport_proxy_ready() {
+  if [ ! -f "$TELEPORT_KUBECONFIG" ]; then
+    echo "Teleport proxy not running – run: tsh login && systemctl --user restart tsh-kube-proxy" >&2
+    return 1
+  fi
+}
+k9t() {
+  _teleport_proxy_ready || return 1
+  k9s --kubeconfig "$TELEPORT_KUBECONFIG" "$@"
+}
+kt() {
+  _teleport_proxy_ready || return 1
+  kubectl --kubeconfig "$TELEPORT_KUBECONFIG" "$@"
+}
 
 source <(COMPLETE=zsh rnk)
 
